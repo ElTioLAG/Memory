@@ -4,13 +4,15 @@ import cardBack from '../images/cardBack.png'
 
 class Card extends React.Component {
     
-      render() {
+    render() {
         return (
             <div class="card">
-                <section class="front"></section>
+                <section class="front">
+                    {/* <p>{this.props.card.id}</p> */}
+                </section>
                 <section class="back">
-                    <a>
-                        <img src={cardBack}/>
+                    <a href="/#">
+                        <img src={cardBack} alt="Parte trasera de la carta"/>
                     </a>
                 </section>
             </div>

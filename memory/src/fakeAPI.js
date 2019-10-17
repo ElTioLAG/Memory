@@ -1,5 +1,5 @@
 function getCards(){
-    return new promise((resolve, reject)=>{
+    return new Promise((resolve, reject)=>{
         resolve(cards)
     })
 }
@@ -15,7 +15,7 @@ function getCards(){
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
-    }*/
+}*/
 const cards = [
     {
         id: 1,
@@ -188,4 +188,6 @@ const cards = [
     }
     ]
 
-export default getCards
+export{
+    getCards
+} 
