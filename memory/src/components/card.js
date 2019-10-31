@@ -3,21 +3,24 @@ import './card.css'
 import cardBack from '../images/cardBack.png'
 
 class Card extends React.Component {
-    
+
     cardClickeada = () => {
-        this.props.cardClickeada(this.props.Card)
+        this.props.cardClickeada(this.props.card)
     }
     render() {
         return (
             <div className="card" onClick={this.cardClickeada}>
-                <section className="front">
-                    {/* <p>{this.props.card.id}</p> */}
-                </section>
-                <section className="back">
-                    <a href="/#">
-                        <img src={cardBack} alt="Parte trasera de la carta"/>
-                    </a>
-                </section>
+                {
+                    this.props.card.status === "oculto" ?
+                        <div className="back">
+                            <a href="/#">
+                                <img src={cardBack} alt="Parte trasera de la carta" />
+                            </a>
+                        </div> :
+                        <div className="front">
+                            {/* <p>{this.props.card.id}</p> */}
+                        </div>
+                }
             </div>
         )
 
