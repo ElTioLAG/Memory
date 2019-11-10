@@ -9,18 +9,18 @@ class Card extends React.Component {
     }
     render() {
         return (
-            <div className="card" onClick={this.cardClickeada}>
-                {
-                    this.props.card.status === "oculto" ?
-                        <div className="back">
-                            <a href="/#">
-                                <img src={cardBack} alt="Parte trasera de la carta" />
-                            </a>
-                        </div> :
-                        <div className="front">
-                            {/* <p>{this.props.card.id}</p> */}
-                        </div>
-                }
+            <div className="container">
+                <div className={`card ${this.props.card.status}`} onClick={this.cardClickeada}>
+                    <div className="back">
+                        <img alt={`Parte trasera de la carta con id  ${this.props.card.id}`} src={cardBack} />
+                    </div>
+                    <div className="front">
+                        {this.props.card.photo ?
+                            <img alt={`Parte trasera de la carta con id  ${this.props.card.id}`} src={this.props.card.photo} /> :
+                            <p>{this.props.card.text}</p>
+                        }
+                    </div>
+                </div>
             </div>
         )
 
